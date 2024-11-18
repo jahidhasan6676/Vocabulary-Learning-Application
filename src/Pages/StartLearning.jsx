@@ -86,8 +86,8 @@ const StartLearning = () => {
             <div className="text-center my-12">
                 <h2 className="text-3xl font-semibold text-gray-800 mb-6">Learn the Alphabet</h2>
 
-                <div className="w-full mx-auto">
-                <iframe className="w-[100%] mx-auto"  height="315" src="https://www.youtube.com/embed/vEnQtNcR4iA?si=cbXyGzAp4O1WHqb8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
+                <div className="w-full mx-auto ">
+                <iframe className="w-[100%] mx-auto rounded-md"  height="315" src="https://www.youtube.com/embed/vEnQtNcR4iA?si=cbXyGzAp4O1WHqb8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" ></iframe>
                 </div>
             </div>
 

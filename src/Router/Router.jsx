@@ -36,8 +36,9 @@ const router = createBrowserRouter([
                 element:<MyProfile></MyProfile>
             },
             {
-                path:"/lessonCard",
-                element:<LessonAllCard></LessonAllCard>
+                path:"/lessonCard/:id",
+                element:<LessonAllCard></LessonAllCard>,
+                loader:()=>fetch("../vocabulary.json")
             }
         ],
 

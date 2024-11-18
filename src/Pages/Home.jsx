@@ -1,9 +1,11 @@
+import Banner from "../components/Banner";
 
 
 const Home = () => {
     return (
-        <div>
-            <h2>home</h2>
+        <div className="py-14">
+           
+            <Banner></Banner>
         </div>
     );
 };

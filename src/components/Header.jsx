@@ -27,13 +27,13 @@ const Header = () => {
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1]  shadow">
                         <NavLink to="/" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>Home</NavLink>
 
-                        <NavLink to="" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>Start-Learning</NavLink>
+                        <NavLink to="/learning" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>Start-Learning</NavLink>
 
-                        <NavLink to="" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>Tutorials</NavLink>
+                        <NavLink to="/tutorials" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>Tutorials</NavLink>
 
-                        <NavLink to="" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>About Us</NavLink>
+                        <NavLink to="/about" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>About Us</NavLink>
 
-                        <NavLink to="" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>My Profile</NavLink>
+                        <NavLink to="profile" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>My Profile</NavLink>
 
                     </ul>
                 </div>
@@ -43,17 +43,17 @@ const Header = () => {
                 <ul className="menu menu-horizontal gap-8">
                     <NavLink to="/" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>Home</NavLink>
 
-                    <NavLink to="" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>Start-Learning</NavLink>
+                    <NavLink to="/learning" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>Start-Learning</NavLink>
 
-                    <NavLink to="" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>Tutorials</NavLink>
+                    <NavLink to="/tutorials" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>Tutorials</NavLink>
 
-                    <NavLink to="" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>About Us</NavLink>
+                    <NavLink to="/about" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>About Us</NavLink>
 
-                    <NavLink to="" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>My Profile</NavLink>
+                    <NavLink to="/profile" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>My Profile</NavLink>
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-neutral">LogOut</button>
+                <button className="btn btn-neutral">Login</button>
             </div>
 
 

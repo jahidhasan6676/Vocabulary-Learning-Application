@@ -6,6 +6,7 @@ import StartLearning from "../Pages/StartLearning";
 import Tutorials from "../Pages/Tutorials";
 import About from "../Pages/About";
 import MyProfile from "../Pages/MyProfile";
+import LessonAllCard from "../components/LessonAllCard";
 
 const router = createBrowserRouter([
     {
@@ -16,25 +17,33 @@ const router = createBrowserRouter([
             {
                 path:"/",
                 element:<Home></Home>
+            },
+            {
+                path:"/learning",
+                element:<StartLearning></StartLearning>
+               
+            },
+            {
+                path:"/tutorials",
+                element:<Tutorials></Tutorials>
+            },
+            {
+                path:"/about",
+                element:<About></About>
+            },
+            {
+                path:"/profile",
+                element:<MyProfile></MyProfile>
+            },
+            {
+                path:"/lessonCard",
+                element:<LessonAllCard></LessonAllCard>
             }
         ],
+
+        
     },
-    {
-        path:"/learning",
-        element:<StartLearning></StartLearning>
-    },
-    {
-        path:"/tutorials",
-        element:<Tutorials></Tutorials>
-    },
-    {
-        path:"/about",
-        element:<About></About>
-    },
-    {
-        path:"/profile",
-        element:<MyProfile></MyProfile>
-    }
+    
 ])
 
 export default router;

@@ -1,11 +1,17 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logoImg from '../assets/images.png';
 import { useContext } from "react";
 import { authContext } from "../AuthProvider/AuthProvider";
 
 
 const Header = () => {
-    const {info} = useContext(authContext)
+    const {user,userLogOut} = useContext(authContext);
+    const navigate = useNavigate();
+
+    const handleLogout = () =>{
+        userLogOut();
+        navigate("/login")
+    }
     return (
         <div className="navbar  w-11/12 mx-auto">
 
@@ -52,14 +58,18 @@ const Header = () => {
 
                     <NavLink to="/about" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>About Us</NavLink>
 
-                    <NavLink to="/profile" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>My Profile</NavLink>
+                    {
+                        user?.email && <NavLink to="/profile" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>My Profile</NavLink>
+                    }
                 </ul>
             </div>
             <div className="navbar-end">
+                
+               
                 {
-                    info && <p>{info.name}</p>
+                    user? <button onClick={handleLogout} className="btn btn-neutral">LogOut</button> : <Link to="/login" className="btn btn-neutral">Login</Link>
                 }
-                <button className="btn btn-neutral">Login</button>
+                
             </div>
 
 

@@ -8,6 +8,10 @@ import About from "../Pages/About";
 import MyProfile from "../Pages/MyProfile";
 import LessonAllCard from "../components/LessonAllCard";
 
+import Login from "../Authentication/Login";
+import Register from "../Authentication/Register";
+import PrivateRoute from "./PrivateRoute";
+
 
 const router = createBrowserRouter([
     {
@@ -22,8 +26,8 @@ const router = createBrowserRouter([
             },
             {
                 path:"/learning",
-                element:<StartLearning></StartLearning>
-               
+                element:
+                    <StartLearning></StartLearning>
             },
             {
                 path:"/tutorials",
@@ -36,11 +40,23 @@ const router = createBrowserRouter([
             {
                 path:"/profile",
                 element:<MyProfile></MyProfile>
+                
             },
             {
                 path:"/lessonCard/:id",
-                element:<LessonAllCard></LessonAllCard>,
+                element:<PrivateRoute>
+                    <LessonAllCard></LessonAllCard>
+                </PrivateRoute>,
                 loader:()=>fetch("../vocabulary.json")
+            },
+            
+            {
+                path:"/login",
+                element:<Login></Login>
+            },
+            {
+                path:"/register",
+                element:<Register></Register>
             }
         ],
 

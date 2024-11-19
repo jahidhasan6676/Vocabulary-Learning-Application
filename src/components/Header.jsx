@@ -1,8 +1,11 @@
 import { NavLink } from "react-router-dom";
 import logoImg from '../assets/images.png';
+import { useContext } from "react";
+import { authContext } from "../AuthProvider/AuthProvider";
 
 
 const Header = () => {
+    const {info} = useContext(authContext)
     return (
         <div className="navbar  w-11/12 mx-auto">
 
@@ -53,6 +56,9 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                {
+                    info && <p>{info.name}</p>
+                }
                 <button className="btn btn-neutral">Login</button>
             </div>
 

@@ -6,7 +6,7 @@ const HomeSuccess = () => {
         <div className="bg-[#f0f8ff] rounded-md mt-20">
             <h2 className="text-2xl font-semibold text-center pt-6">Our Achievements</h2>
 
-            <div className="flex justify-around p-8">
+            <div className="flex justify-around flex-wrap p-8 ">
                 {/* User Count */}
                 <div>
                     <h3 className="text-[#ff6347] text-[40px]">

@@ -5,10 +5,10 @@ import { authContext } from "../AuthProvider/AuthProvider";
 
 
 const Header = () => {
-    const {user,userLogOut} = useContext(authContext);
+    const { user, userLogOut } = useContext(authContext);
     const navigate = useNavigate();
 
-    const handleLogout = () =>{
+    const handleLogout = () => {
         userLogOut();
         navigate("/login")
     }
@@ -33,7 +33,7 @@ const Header = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1]  shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1]  shadow w-[100px]">
                         <NavLink to="/" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>Home</NavLink>
 
                         <NavLink to="/learning" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>Start-Learning</NavLink>
@@ -46,7 +46,7 @@ const Header = () => {
 
                     </ul>
                 </div>
-               <img className="w-[170px]" src={logoImg} alt="" />
+                <img className="w-[170px] hidden md:flex" src={logoImg} alt="" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal gap-8">
@@ -63,13 +63,22 @@ const Header = () => {
                     }
                 </ul>
             </div>
-            <div className="navbar-end">
-                
-               
+            <div className="navbar-end gap-2">
+
                 {
-                    user? <button onClick={handleLogout} className="btn btn-neutral">LogOut</button> : <Link to="/login" className="btn btn-neutral">Login</Link>
+                    user &&
+                        <div className="">
+                            <img className="w-12 rounded-full" src={user?.photoURL} alt="" />
+                            
+                        </div>
+                        
                 }
-                
+
+
+                {
+                    user ? <button onClick={handleLogout} className="btn btn-neutral">LogOut</button> : <Link to="/login" className="btn btn-neutral">Login</Link>
+                }
+
             </div>
 
 

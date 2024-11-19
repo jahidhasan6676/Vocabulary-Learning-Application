@@ -23,7 +23,10 @@ const Register = () => {
         userRegister(email,password)
         .then(result => {
             setUser(result.user);
-            navigate("/")
+            updateUserProfile({displayName:name, photoURL:photo})
+            .then(()=>{
+                navigate("/")
+            })
         })
         .catch(error =>{
             console.log(error)

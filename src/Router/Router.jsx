@@ -8,6 +8,7 @@ import About from "../Pages/About";
 import MyProfile from "../Pages/MyProfile";
 import LessonAllCard from "../components/LessonAllCard";
 
+
 const router = createBrowserRouter([
     {
         path:"/",
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
             {
                 path:"/",
                 element:<Home></Home>
+                
             },
             {
                 path:"/learning",

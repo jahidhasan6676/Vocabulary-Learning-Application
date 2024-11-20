@@ -1,12 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../AuthProvider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
 
 
 const Register = () => {
-    const {userRegister,setUser,googlePopup} = useContext(authContext);
+    const {userRegister,setUser,googlePopup,updateUserProfile} = useContext(authContext);
     const navigate = useNavigate();
+    const [error,setError] = useState("");
 
     const handleSubmit = e =>{
         e.preventDefault();
@@ -18,7 +19,18 @@ const Register = () => {
         const password = form.get("password")
         console.log(name,photo,email,password)
 
+        // clear error message
+        setError("");
 
+        // password validation
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if(!passwordRegex.test(password)){
+            setError(
+                "Password must contain an uppercase letter, a lowercase letter, and be at least 6 characters long."
+              );
+              return;
+        };
+        
         // register user
         userRegister(email,password)
         .then(result => {
@@ -27,6 +39,7 @@ const Register = () => {
             .then(()=>{
                 navigate("/")
             })
+           
         })
         .catch(error =>{
             console.log(error)
@@ -56,9 +69,7 @@ const Register = () => {
                             <span className="label-text">Name</span>
                         </label>
                         <input type="text" name='name' placeholder="Name" className="input input-bordered" required />
-                        {/* {
-                            error.name && <p className='text-sm text-red-500'>{error.name}</p>
-                        } */}
+                       
                     </div>
 
                     <div className="form-control">
@@ -82,9 +93,11 @@ const Register = () => {
                             <span className="label-text">Password</span>
                         </label>
                         <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-                        <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                        </label>
+
+                         {
+                            error && <p className='text-xs text-red-500'>{error}</p>
+                        }
+                        
                     </div>
 
                     <div className="form-control mt-6">

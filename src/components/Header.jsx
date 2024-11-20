@@ -2,12 +2,13 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import logoImg from '../assets/images.png';
 import { useContext } from "react";
 import { authContext } from "../AuthProvider/AuthProvider";
+// import { toast } from "react-toastify";
 
 
 const Header = () => {
     const { user, userLogOut } = useContext(authContext);
     const navigate = useNavigate();
-    console.log(user)
+    // console.log(user)
 
     const handleLogout = () => {
         userLogOut();
@@ -15,6 +16,9 @@ const Header = () => {
     }
     return (
         <div className="navbar  w-11/12 mx-auto">
+            {/* {
+                user && toast.success(`Welcome ${user?.displayName}`)
+            } */}
 
             <div className="navbar-start">
                 <div className="dropdown">

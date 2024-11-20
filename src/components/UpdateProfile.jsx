@@ -23,7 +23,7 @@ const UpdateProfile = () => {
     }
     return (
         <div className="py-20">
-            <div className="glass rounded-xl p-6 w-[40%] mx-auto">
+            <div className="glass shadow-md rounded-xl p-6 w-[40%] mx-auto">
                 <h2 className="text-xl font-semibold text-center">Update Profile Information</h2>
 
                 <form onSubmit={handleUpdateSubmit}>
@@ -43,7 +43,7 @@ const UpdateProfile = () => {
                     </div>
                     <div className="mt-3 ">
                    
-                    <button className="btn btn-accent">Update</button>
+                    <button className="btn btn-accent text-white">Update</button>
                     
                     </div>
 

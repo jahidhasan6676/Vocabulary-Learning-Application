@@ -1,11 +1,11 @@
 import { useContext } from "react";
 import { authContext } from "../AuthProvider/AuthProvider";
-import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 const ForgetPassword = () => {
     const {resetPassword} = useContext(authContext);
-    const navigate = useNavigate();
+    
 
     const handleResetPassword = e =>{
         e.preventDefault();
@@ -14,6 +14,8 @@ const ForgetPassword = () => {
 
         resetPassword(email)
         .then(() =>{
+            toast.success("Password reset email sent! Please check your inbox.");
+            e.target.reset(); // Clear the form
             // window.location.href = "https://mail.google.com";
         })
         .catch(error =>{
@@ -23,8 +25,8 @@ const ForgetPassword = () => {
 
 
     return (
-        <div className="py-20">
-            <div className="glass p-6 rounded-xl w-[30%] mx-auto">
+        <div className="py-20 bg-gray-100 mt-14 mb-14 rounded-md flex items-center justify-center">
+            <div className="glass bg-white shadow-lg p-8 rounded-xl w-[90%] sm:w-[400px]">
                 <h2 className="font-semibold text-center">Forget Password</h2>
                 <form onSubmit={handleResetPassword}>
                     <div className="form-control">
@@ -33,10 +35,9 @@ const ForgetPassword = () => {
                             <span className="label-text">Email</span>
                         </label>
                         <input type="email" name='email' placeholder="email" className="input input-bordered" required />
-                        {/* <div className="flex justify-between mt-3 "> */}
-                        <button className="btn btn-info w-fit mt-3">Reset Password</button>
-                        {/* <Link to="/login"><button className="btn btn-accent">Back</button></Link> */}
-                        {/* </div> */}
+                        
+                        <button className="btn bg-blue-600 text-white hover:bg-blue-700 w-full py-2 rounded-lg transition mt-3">Reset Password</button>
+                        
                     </div>
                 </form>
             </div>

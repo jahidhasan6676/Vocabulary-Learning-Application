@@ -1,46 +1,49 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { authContext } from "../AuthProvider/AuthProvider";
-import { FaGoogle } from "react-icons/fa";
+
+import { toast } from "react-toastify";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
-    const {userLogin,setUser,googlePopup} = useContext(authContext);
-    const [error,setError] = useState('');
+    const { userLogin, setUser, googlePopup } = useContext(authContext);
+    const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
- 
 
-    const handleLogin = e =>{
+
+    const handleLogin = e => {
         e.preventDefault();
         const form = new FormData(e.target);
         const email = form.get("email");
-        const password = form.get("password") ;
+        const password = form.get("password");
 
         // user login
-        userLogin(email,password)
-        .then(result =>{
-            setUser(result.user)
-            navigate(location?.state? location.state : "/")
-        })
-        .catch(err =>{
-            // console.log(error.code)
-            setError(err.code)
-        })
+        userLogin(email, password)
+            .then(result => {
+                setUser(result.user)
+                navigate(location?.state ? location.state : "/")
+            })
+            .catch(err => {
+                // console.log(error.code)
+                setError(err.code)
+            })
     }
 
-     // google Popup
-    const handleGooglePopup = () =>{
+    // google Popup
+    const handleGooglePopup = () => {
         googlePopup()
-        .then(result => {
-            setUser(result.user);
+            .then(result => {
+                setUser(result.user);
                 navigate("/")
-        })
-        .catch(error =>{
-            console.log(error)
-        })
+                toast.success(`Welcome ${result.user.displayName}!`)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
     return (
-        <div className="card  w-full max-w-sm mx-auto shrink-0 glass mt-20 mb-20">
+        <div className="card  w-full max-w-sm mx-auto shrink-0 glass shadow-md mt-20 mb-20">
             <form onSubmit={handleLogin} className="card-body">
                 <h3 className='text-xl font-bold text-center mb-4'>Login Your Account</h3>
                 <div className="form-control">
@@ -68,14 +71,15 @@ const Login = () => {
 
                 <div className="form-control mt-6">
                     <button  className="btn btn-primary">Login</button>
-                    
+
                     <div className="divider font-semibold">or</div>
-                    <button onClick={handleGooglePopup} className=" btn btn-success text-white"><FaGoogle />Continue With Google</button>
+                    <button onClick={handleGooglePopup} className=" btn bg-gray-300"><FcGoogle className="text-xl" />Continue With Google</button>
                 </div>
             </form>
-            <p className='text-xs ml-8 mb-2'>Don’t have an account ? <Link to="/register" className='text-red-500 underline'>Register</Link></p>
-            
+            <p className='text-xs ml-8 mb-2'>Don’t have an account ? <Link to="/register" className='text-green-500 underline'>Register</Link></p>
+
         </div>
+
     );
 };
 

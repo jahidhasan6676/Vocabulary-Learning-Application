@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authContext } from "../AuthProvider/AuthProvider";
-import { FaGoogle } from "react-icons/fa";
+
+import { toast } from "react-toastify";
+import { FcGoogle } from "react-icons/fc";
 
 
 const Register = () => {
@@ -38,6 +40,7 @@ const Register = () => {
             updateUserProfile({displayName:name, photoURL:photo})
             .then(()=>{
                 navigate("/")
+                toast.success(`Welcome ${result.user.displayName}!`)
             })
            
         })
@@ -53,14 +56,15 @@ const Register = () => {
         .then(result => {
             setUser(result.user);
                 navigate("/")
+                toast.success(`Welcome ${result.user.displayName}!`)
         })
         .catch(error =>{
             console.log(error)
         })
     }
     return (
-        <div className="py-20">
-            <div className="card  w-full max-w-sm mx-auto glass">
+        <div className="py-20 " >
+            <div className="card  w-full max-w-sm mx-auto glass shadow-md">
                 <form onSubmit={handleSubmit}  className="card-body">
                 <h3 className='text-xl font-bold text-center mb-4'>Register Your Account</h3>
 
@@ -103,10 +107,10 @@ const Register = () => {
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Register</button>
                         <div className="divider font-semibold">or</div>
-                        <button onClick={handleGooglePopup} className=" btn btn-success text-white"><FaGoogle />Continue With Google</button>
+                        <button onClick={handleGooglePopup} className=" btn bg-gray-300"><FcGoogle className="text-xl" />Continue With Google</button>
                     </div>
                 </form>
-                <p className='text-xs ml-8 mb-2'>Already have an account ? <Link to="/login" className='text-red-500 underline'>Login</Link></p>
+                <p className='text-xs ml-8 mb-2'>Already have an account ? <Link to="/login" className='text-green-500 underline'>Login</Link></p>
             </div>
         </div>
     );

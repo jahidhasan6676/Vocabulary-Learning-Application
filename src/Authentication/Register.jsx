@@ -52,9 +52,7 @@ const Register = () => {
         googlePopup()
         .then(result => {
             setUser(result.user);
-            
-            navigate("/")
-           
+                navigate("/")
         })
         .catch(error =>{
             console.log(error)

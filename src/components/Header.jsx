@@ -7,6 +7,7 @@ import { authContext } from "../AuthProvider/AuthProvider";
 const Header = () => {
     const { user, userLogOut } = useContext(authContext);
     const navigate = useNavigate();
+    console.log(user)
 
     const handleLogout = () => {
         userLogOut();
@@ -66,14 +67,15 @@ const Header = () => {
             <div className="navbar-end gap-2">
 
                 {
-                    user &&
-                        <div className="">
-                            <img className="w-12 rounded-full" src={user?.photoURL} alt="" />
-                        </div>
+                    user?
+                     <div className="flex gap-2">
+                        <img className="w-12 rounded-full" src={user?.photoURL} alt="" />
+                        <button onClick={handleLogout} className="btn btn-neutral">LogOut</button>
+                    </div> 
+                    :
+                     <Link to="/login" className="btn btn-neutral">Login</Link>
                         
-                }
-                {
-                    user ? <button onClick={handleLogout} className="btn btn-neutral">LogOut</button> : <Link to="/login" className="btn btn-neutral">Login</Link>
+                            
                 }
 
             </div>

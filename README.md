@@ -13,8 +13,9 @@ It is Japanese vocabulary learning application. Here the lessons are arranged in
 - **Forget Password Page**:
   - Automatically populates the email input if it was entered on the login page.
   - Allows users to request a password reset and redirects them to Gmail.
-- **State Management**: 
-  - Passes the email input data between pages.
+- **My Profile**: Logged user information show my profile pages.
+- **Google Login**:
+  - Continue with Google login button click then automatic login user.
 - **User Experience**:
   - Clean and user-friendly interface.
 
@@ -22,7 +23,9 @@ It is Japanese vocabulary learning application. Here the lessons are arranged in
 - **react-router-dom**: For routing between pages.
   - Installation: `npm install react-router-dom`
 - **react**: For building the UI components.
-- **react-count-up**: For success 
+- **react-count-up**: Used the React Count Up package to User Count, Lesson Count vocabulary count, Tutorial Count.
+- **react-rating**: Used to display learner ratings in the review section.
+-**firebase-package**: Login and Register authentication for used firebase.
 
 
 

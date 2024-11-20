@@ -11,6 +11,8 @@ import LessonAllCard from "../components/LessonAllCard";
 import Login from "../Authentication/Login";
 import Register from "../Authentication/Register";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../components/UpdateProfile";
+import ForgetPassword from "../Authentication/ForgetPassword";
 
 
 const router = createBrowserRouter([
@@ -59,6 +61,14 @@ const router = createBrowserRouter([
             {
                 path:"/register",
                 element:<Register></Register>
+            },
+            {
+                path:"/updateProfile",
+                element:<UpdateProfile></UpdateProfile>
+            },
+            {
+                path:"/forgetPassword",
+                element:<ForgetPassword></ForgetPassword>
             }
         ],
 

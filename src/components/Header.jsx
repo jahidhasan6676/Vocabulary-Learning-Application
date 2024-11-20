@@ -59,7 +59,7 @@ const Header = () => {
                     <NavLink to="/about" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>About Us</NavLink>
 
                     {
-                        user?.email && <NavLink to="/profile" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>My Profile</NavLink>
+                        user && <NavLink to="/profile" className={({ isActive }) => `font-bold ${isActive ? 'text-warning' : 'hover:text-warning'}`}>My Profile</NavLink>
                     }
                 </ul>
             </div>
@@ -69,12 +69,9 @@ const Header = () => {
                     user &&
                         <div className="">
                             <img className="w-12 rounded-full" src={user?.photoURL} alt="" />
-                            
                         </div>
                         
                 }
-
-
                 {
                     user ? <button onClick={handleLogout} className="btn btn-neutral">LogOut</button> : <Link to="/login" className="btn btn-neutral">Login</Link>
                 }

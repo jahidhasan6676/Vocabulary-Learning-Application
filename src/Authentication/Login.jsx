@@ -32,7 +32,7 @@ const Login = () => {
     const handleGooglePopup = () =>{
         googlePopup()
         .then(result => {
-            setUser(result);
+            setUser(result.user);
             navigate("/")
         })
         .catch(error =>{
@@ -62,7 +62,7 @@ const Login = () => {
                     }
 
                     <label className="label">
-                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                        <Link to="/forgetPassword" className="label-text-alt link link-hover">Forgot password?</Link>
                     </label>
                 </div>
 

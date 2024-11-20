@@ -51,8 +51,10 @@ const Register = () => {
     const handleGooglePopup = () =>{
         googlePopup()
         .then(result => {
-            setUser(result);
+            setUser(result.user);
+            
             navigate("/")
+           
         })
         .catch(error =>{
             console.log(error)

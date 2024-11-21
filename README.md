@@ -14,8 +14,8 @@ It is Japanese vocabulary learning application. Here the lessons are arranged in
   - Automatically populates the email input if it was entered on the login page.
   - Allows users to request a password reset and redirects them to Gmail.
 - **My Profile**: Logged user information show my profile pages.
-- **Google Login**:
-  - Continue with Google login button click then automatic login user.
+- **Google Login**: Continue with Google login button click then automatic login user.
+- **Learning Page**: Show 10 lesson and when click lesson card then show all lesson category all card.
 - **User Experience**:
   - Clean and user-friendly interface.
 
@@ -26,6 +26,7 @@ It is Japanese vocabulary learning application. Here the lessons are arranged in
 - **react-count-up**: Used the React Count Up package to User Count, Lesson Count vocabulary count, Tutorial Count.
 - **react-rating**: Used to display learner ratings in the review section.
 -**firebase-package**: Login and Register authentication for used firebase.
+-**Animation.css package**: Used to Home page refresh new word information show display.
 
 
 

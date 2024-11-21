@@ -43,7 +43,7 @@ const Login = () => {
             })
     }
     return (
-        <div className="card  w-full max-w-sm mx-auto shrink-0 glass shadow-md mt-20 mb-20">
+        <div className="card  w-full max-w-sm mx-auto shrink-0 glass shadow-md mt-32 mb-20">
             <form onSubmit={handleLogin} className="card-body">
                 <h3 className='text-xl font-bold text-center mb-4'>Login Your Account</h3>
                 <div className="form-control">

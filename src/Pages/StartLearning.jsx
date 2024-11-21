@@ -5,7 +5,7 @@ const StartLearning = () => {
     // https://beneficial-aftermath.surge.sh/
 
     return (
-        <div className="my-14">
+        <div className="pt-20 pb-14">
             <h1 className="font-bold text-3xl text-center">Lessons Overview</h1>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mt-8">

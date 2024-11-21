@@ -12,7 +12,8 @@ const MyProfile = () => {
 
 
     return ( 
-        <div className="text-center py-8 mt-14 mb-14 bg-gray-50 shadow-md rounded-lg max-w-md mx-auto space-y-4">
+        <div style={{marginTop:"50px"}} className="text-center py-6  mb-14  bg-gray-50 shadow-md rounded-lg max-w-md mx-auto space-y-4">
+            
             <h2 className="font-semibold">Welcome, {user?.displayName}!</h2>
             <div className="flex justify-center">
                 {
@@ -28,7 +29,8 @@ const MyProfile = () => {
             <Link to="/updateProfile" className="btn btn-info text-white">
                 Update Profile
             </Link>
-        </div>
+            </div>
+      
     )
 };
 

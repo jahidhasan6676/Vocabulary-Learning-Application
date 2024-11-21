@@ -56,7 +56,8 @@ const AuthProvider = ({ children }) => {
         userLogOut,
         googlePopup,
         updateUserProfile,
-        resetPassword
+        resetPassword,
+        loading
     }
 
 
@@ -65,7 +66,7 @@ const AuthProvider = ({ children }) => {
         const unSubscriber = onAuthStateChanged(auth, (currentUser) => {
             if(currentUser){
                 setUser(currentUser);
-            
+                
             }
             else{
                 setUser(null)

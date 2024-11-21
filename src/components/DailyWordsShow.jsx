@@ -4,7 +4,7 @@ const DailyWordsShow = ({words}) => {
     return (
         <div>
             
-                <div style={{ marginTop: "20px", fontSize: "1.2rem" }}>
+                <div className="mt-5 text-xl">
                     <p className="animate__animated animate__bounceInLeft">
                         <strong>Word:</strong> {words.word}
                     </p>

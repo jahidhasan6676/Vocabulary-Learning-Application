@@ -5,6 +5,22 @@ const LessonCardDetails = ({ lessonDetails }) => {
     const navigate = useNavigate();
     const { word, meaning,
         when_to_say, example, difficulty, pronunciation, part_of_speech } = lessonDetails;
+
+
+        const speakWord = (text) => {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = "ja-JP"; // Japanese Language
+            utterance.rate = 1; // Speed of the voice
+            utterance.pitch = 1; // Pitch of the voice
+    
+            const voices = window.speechSynthesis.getVoices();
+            const japaneseVoice = voices.find(voice => voice.lang === "ja-JP");
+            if (japaneseVoice) {
+                utterance.voice = japaneseVoice;
+            }
+    
+            window.speechSynthesis.speak(utterance); // Play the speech
+        };
     return (
         <div className={` rounded-md p-4 space-y-1 ${difficulty === "easy"
             ? "bg-green-100"
@@ -16,8 +32,9 @@ const LessonCardDetails = ({ lessonDetails }) => {
             <h2 className="text-sm"> <span className="font-bold text-sm">Meaning: </span> {meaning}</h2>
             <h2 className="text-sm"><span className="font-bold text-sm">Pronunciation: </span> {pronunciation}</h2>
             <h2 className="text-sm"><span className="font-bold text-sm">Part_of_speech: </span> {part_of_speech}</h2>
-            <div className="text-center pt-4">
+            <div className="flex justify-between pt-4">
                 <button onClick={() => document.getElementById('my_modal_5').showModal()} className="btn btn-accent text-sm text-white">When to say</button>
+                <button onClick={()=>speakWord(word)} className="btn bg-purple-500 text-white hover:bg-purple-700">Speck word</button>
             </div>
 
 

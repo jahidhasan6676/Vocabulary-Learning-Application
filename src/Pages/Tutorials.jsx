@@ -4,7 +4,7 @@ const Tutorials = () => {
     const navigate = useNavigate();
     return (
         <div className="py-10">
-            <h2 className="text-2xl font-bold text-center">Tutorials page</h2>
+            <h2 className="text-2xl font-semibold text-center">Watch and Learn Japanese Language</h2>
 
             {/* youtube video */}
             <div className="py-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

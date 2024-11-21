@@ -7,10 +7,10 @@ const MainLayout = () => {
     return (
         <div>
             
-            <header>
+            <header className="mb-20">
                 <Header></Header>
             </header>
-            <main className="w-10/12 mx-auto min-h-[calc(100vh-372px)]">
+            <main className="w-10/12 mx-auto min-h-[calc(100vh-390px)]">
                 <Outlet></Outlet>
             </main>
             <footer>

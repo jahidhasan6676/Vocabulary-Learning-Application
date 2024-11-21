@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { authContext } from "../AuthProvider/AuthProvider";
-import { toast } from "react-toastify";
+
 
 
 const ForgetPassword = () => {
@@ -14,9 +14,9 @@ const ForgetPassword = () => {
 
         resetPassword(email)
         .then(() =>{
-            toast.success("Password reset email sent! Please check your inbox.");
+            // toast.success("Password reset email sent! Please check your inbox.");
             e.target.reset(); // Clear the form
-            // window.location.href = "https://mail.google.com";
+            window.location.href = "https://mail.google.com";
         })
         .catch(error =>{
             console.log(error)
@@ -25,7 +25,7 @@ const ForgetPassword = () => {
 
 
     return (
-        <div className="py-20 bg-gray-100 mt-14 mb-14 rounded-md flex items-center justify-center">
+        <div className="py-20 bg-gray-100 mt-20  mb-14 rounded-md flex items-center justify-center">
             <div className="glass bg-white shadow-lg p-8 rounded-xl w-[90%] sm:w-[400px]">
                 <h2 className="font-semibold text-center">Forget Password</h2>
                 <form onSubmit={handleResetPassword}>

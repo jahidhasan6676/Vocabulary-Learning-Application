@@ -39,7 +39,7 @@ const Login = () => {
                 toast.success(`Welcome ${result.user.displayName}!`)
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
             })
     }
     return (

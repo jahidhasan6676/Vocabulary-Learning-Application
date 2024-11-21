@@ -27,7 +27,7 @@ const Tutorials = () => {
                 <iframe className="w-full mx-auto rounded-md" width="" height="315" src="https://www.youtube.com/embed/2jbQi0-_R88?si=NXot1BdtXMqCWZ9Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div>
-                <button onClick={()=>navigate("/learning")} className="btn btn-success text-white">Learn Vocabularies</button>
+                <button onClick={()=>navigate("/learning")} className="px-6 py-2 bg-gradient-to-r from-blue-500 to-green-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg hover:shadow-green-500/50 hover:scale-105 transition-transform">Learn Vocabularies</button>
             </div>
         </div>
     );

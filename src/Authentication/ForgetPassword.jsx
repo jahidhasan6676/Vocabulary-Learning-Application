@@ -15,11 +15,11 @@ const ForgetPassword = () => {
         resetPassword(email)
         .then(() =>{
             // toast.success("Password reset email sent! Please check your inbox.");
-            e.target.reset(); // Clear the form
+            e.target.reset(); 
             window.location.href = "https://mail.google.com";
         })
         .catch(error =>{
-            console.log(error)
+            // console.log(error)
         })
     }
 

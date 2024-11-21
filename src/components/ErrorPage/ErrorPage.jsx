@@ -3,32 +3,40 @@ import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
     return (
-        // <div className="text-xl text-center my-20">
-        //     <h2>Error</h2>
-        //     <h3>Page not found</h3>
-        //     <Link to="/" className="btn">Back to Home</Link>
-        // </div>
-        
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-900 via-purple-800 to-black text-white">
+            {/* Glowing Portal */}
+            <div className="relative">
+                <div className="w-48 h-48 rounded-full bg-gradient-to-r from-cyan-400 to-pink-400 animate-pulse shadow-2xl shadow-cyan-500/50"></div>
+                <div className="absolute top-4 left-4 w-40 h-40 rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 blur-xl"></div>
+            </div>
 
-        <div style={{ height: "100vh",
-            background: "-webkit-repeating-linear-gradient(-45deg, #71b7e6, #69a6ce, #b98acc)"}} >
-            <div className=" rounded-md  bg-white w-[40%] mx-auto space-y-2 text-center p-6">
-               
-                <h2 className="font-semibold text-7xl">
-                    404
-                </h2>
-                <h4 className="font-semibold text-xl">
-                    Opps! Page not found
-                </h4>
-                <p className="text-sm font-medium text-gray-500">
-                    Sorry, the page you're looking for doesn't exist. If you think something is broken, report a problem.
-                </p>
-                <div>
-                   <Link to="/" className="btn btn-warning text-white"> return home</Link>
-                    
+            {/* Robot */}
+            <div className="mt-8">
+                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center shadow-lg">
+                    <div className="w-4 h-4 bg-red-500 rounded-full animate-ping"></div>
                 </div>
-                </div>
-           
+                <div className="w-8 h-16 bg-gray-600 rounded-lg mt-2 mx-auto"></div>
+                <div className="w-6 h-4 bg-gray-500 rounded-md mt-1 mx-auto"></div>
+            </div>
+
+            {/* Text Content */}
+            <h1 className="mt-8 text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-500">
+                404
+            </h1>
+            <p className="text-lg font-medium text-gray-300 mt-4">
+                Oops! Lost in the code.
+            </p>
+            <p className="text-sm text-gray-400 max-w-sm text-center mt-2">
+                The page you're looking for doesn't exist or has been moved. Let's get you back home!
+            </p>
+
+            {/* Return Home Button */}
+            <Link
+                to="/"
+                className="mt-6 px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-lg shadow-lg hover:shadow-purple-700 hover:scale-105 transition-transform"
+            >
+                Return Home
+            </Link>
         </div>
     );
 };

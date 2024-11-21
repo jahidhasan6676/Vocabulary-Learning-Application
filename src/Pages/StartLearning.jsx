@@ -92,7 +92,7 @@ const StartLearning = () => {
             </div>
 
             {/* View More Button */}
-            <Link to="/tutorials" className="px-6 py-3 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700"> View More Tutorials </Link>
+            <Link to="/tutorials" className="px-6 py-2 text-white font-semibold rounded-lg bg-black border-pink-500 hover:bg-pink-500 hover:text-black hover:shadow-pink-500 hover:scale-105 transition-all"> View More Tutorials </Link>
 
 
 

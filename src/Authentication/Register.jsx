@@ -45,7 +45,7 @@ const Register = () => {
            
         })
         .catch(error =>{
-            console.log(error)
+            // console.log(error)
         })
         
     }
@@ -59,7 +59,7 @@ const Register = () => {
                 toast.success(`Welcome ${result.user.displayName}!`)
         })
         .catch(error =>{
-            console.log(error)
+            // console.log(error)
         })
     }
     return (

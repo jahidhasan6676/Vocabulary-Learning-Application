@@ -35,7 +35,7 @@ const Login = () => {
         googlePopup()
             .then(result => {
                 setUser(result.user);
-                navigate("/")
+                navigate(location?.state ? location.state : "/")
                 toast.success(`Welcome ${result.user.displayName}!`)
             })
             .catch(error => {

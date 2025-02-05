@@ -1,4 +1,4 @@
-# Vocabulary Learning Website
+# Vocabulary Learning Application
 
 ## Purpose
 It is Japanese vocabulary learning application. Here the lessons are arranged in easy, medium and hard form. The lessons are step-by-step, and there are tutorials on the language. You can learn Japanese very easily from this application.
@@ -63,8 +63,8 @@ It is Japanese vocabulary learning application. Here the lessons are arranged in
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/jahidhasan6676/Vucabulary-Learning-Website.git
-   cd books-library
+   git clone https://github.com/jahidhasan6676/Vocabulary-Learning-Application.git
+   cd Vocabulary-Learning-Application
 
 
 
